@@ -11,12 +11,22 @@ app = Flask(__name__)
 @app.route('/', methods=['GET', 'POST'])
 def index():
     data = None
+    city_placeholder = "City"
+    state_placeholder = "State/Province"
+    country_placeholder = "Country"
+
     if request.method == 'POST':
         city = request.form['cityName']
         state = request.form['stateName']
         country = request.form['countryName']
         data = get_weather(city, state, country)
-    return render_template('index.html', data=data)
+
+        # Set new placeholders to user input
+        city_placeholder = city
+        state_placeholder = state
+        country_placeholder = country
+
+    return render_template('index.html',data=data, city_placeholder=city_placeholder, state_placeholder=state_placeholder, country_placeholder=country_placeholder)
 
 if __name__ == '__main__':
     app.run(debug=True, port=5001)

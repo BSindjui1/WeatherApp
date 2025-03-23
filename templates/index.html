@@ -12,13 +12,13 @@
         <form action="/" method="post" class="mt-4">
             <div class="row mb-3">
                 <div class="col-sm">
-                    <input type="text" id="cityName" name="cityName" placeholder="City" class="form-control" required>
+                    <input type="text" id="cityName" name="cityName" placeholder="{{ city_placeholder }}" class="form-control">
                 </div>
                 <div class="col-sm">
-                    <input type="text" id="stateName" name="stateName" placeholder="State/Territory (Optional)" class="form-control">
+                    <input type="text" id="stateName" name="stateName" placeholder="{{ state_placeholder }}" class="form-control">
                 </div>
                 <div class="col-sm">
-                    <input type="text" id="countryName" name="countryName" placeholder="Country" class="form-control" required>
+                    <input type="text" id="countryName" name="countryName" placeholder="{{ country_placeholder }}" class="form-control">
                 </div>
             </div>
             <button class="submit btn btn-light">Find Weather</button>
